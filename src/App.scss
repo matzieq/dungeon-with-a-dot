@@ -1,0 +1,71 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  image-rendering: crisp-edges;
+}
+
+.game {
+  width: 56vh;
+  height: 100vh;
+  background-color: #000;
+  margin: 0 auto;
+}
+
+.dungeon-walls {
+  height: 100%;
+  position: relative;
+  .wall {
+    width: 100%;
+    height: 37.5%;
+    background-image: url("./assets/dungeon-walls.png");
+    background-repeat: no-repeat;
+    background-size: 300%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    // display: none;
+    &__back {
+      &--leftmost {
+        background-position: 0 0;
+        display: block;
+      }
+      &--left {
+        background-position: 50% 0;
+      }
+      &--mid {
+        background-position: 100% 0;
+      }
+
+      &--right {
+        background-position: 0 33%;
+      }
+      &--rightmost {
+        background-position: 50% 33%;
+      }
+    }
+
+    &__mid {
+      &--left {
+        background-position: 100% 33%;
+      }
+      &--mid {
+        background-position: 0 66%;
+      }
+
+      &--right {
+        background-position: 50% 66%;
+      }
+    }
+
+    &__front {
+      &--left {
+        background-position: 100% 66%;
+      }
+
+      &--right {
+        background-position: 0 100%;
+      }
+    }
+  }
+}
