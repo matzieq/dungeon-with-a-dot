@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import DungeonWalls from "./components/DungeonWalls";
+import Menu from "./components/Menu";
 import "./App.scss";
 
 const App = () => {
@@ -8,12 +9,19 @@ const App = () => {
     [1, 1, 0, 0, 1],
     [1, 1, 0, 1, 0]
   ];
-  return (
-    <div className="game">
-      <DungeonWalls walls={walls} />
-      <p style={{ fontSize: "6vh" }}>Something</p>
-    </div>
-  );
+
+  const [gameState, setGameState] = useState("Menu");
+  const componentToRender = () => {
+    switch (gameState) {
+      case "Menu":
+        return <Menu />;
+      case "Game":
+        return <DungeonWalls walls={walls} />;
+      default:
+        return null;
+    }
+  };
+  return <div className="game">{componentToRender()}</div>;
 };
 
 export default App;

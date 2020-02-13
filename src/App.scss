@@ -4,15 +4,27 @@
   box-sizing: border-box;
   image-rendering: crisp-edges;
   color: #fff;
+  font-size: 15vh;
 }
 
 @font-face {
-  font-family: PixelRPG;
-  src: url("./assets/PixelRPG.ttf");
+  font-family: Pixeltype;
+  src: url("./assets/Pixeltype.ttf");
 }
 
 body {
-  font-family: PixelRPG;
+  font-family: Pixeltype;
+}
+
+button {
+  outline: none;
+  background: none;
+  border: none;
+  background-image: url("./assets/UI-Button.png");
+  background-size: 100% 100%;
+  background-position: center center;
+  font-family: inherit;
+  font-size: 1em;
 }
 
 .game {
@@ -75,5 +87,11 @@ body {
         background-position: 0 100%;
       }
     }
+  }
+}
+
+.menu {
+  &__start {
+    padding: 0 0.5em;
   }
 }
